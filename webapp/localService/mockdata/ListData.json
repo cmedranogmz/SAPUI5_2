@@ -1,0 +1,154 @@
+{
+    "Products": [
+        {
+            "Id": "P1",
+            "Material": "Portatil",
+            "Brand": "Compaq",
+            "Model": "610",
+            "Weight": "3KG",
+            "Price": "300",
+            "Currency": "EUR",
+            "Properties": [
+                {
+                    "Id": "1",
+                    "Text": "Property 1"
+                },
+                {
+                    "Id": "2",
+                    "Text": "Property 2"
+                },
+                {
+                    "Id": "3",
+                    "Text": "Property 3"
+                },
+                {
+                    "Id": "4",
+                    "Text": "Property 4"
+                },
+                {
+                    "Id": "5",
+                    "Text": "Property 5"
+                }
+            ]
+        },
+        {
+            "Id": "P2",
+            "Material": "PC",
+            "Brand": "Compaq",
+            "Model": "710",
+            "Weight": "5KG",
+            "Price": "350",
+            "Currency": "EUR",
+            "Properties": [
+                {
+                    "Id": "1",
+                    "Text": "Property 1"
+                },
+                {
+                    "Id": "2",
+                    "Text": "Property 2"
+                },
+                {
+                    "Id": "3",
+                    "Text": "Property 3"
+                },
+                {
+                    "Id": "4",
+                    "Text": "Property 4"
+                },
+                {
+                    "Id": "5",
+                    "Text": "Property 5"
+                }
+            ]
+        },
+        {
+            "Id": "P3",
+            "Material": "Grapadora",
+            "Brand": "American Crafts",
+            "Model": "230",
+            "Weight": "1KG",
+            "Price": "20",
+            "Currency": "EUR",
+            "Properties": [
+                {
+                    "Id": "1",
+                    "Text": "Property 1"
+                },
+                {
+                    "Id": "2",
+                    "Text": "Property 2"
+                },
+                {
+                    "Id": "3",
+                    "Text": "Property 3"
+                },
+                {
+                    "Id": "4",
+                    "Text": "Property 4"
+                },
+                {
+                    "Id": "5",
+                    "Text": "Property 5"
+                }
+            ]
+        },
+        {
+            "Id": "P4",
+            "Material": "Silla de escritorio",
+            "Brand": "ASPEN",
+            "Model": "R45",
+            "Weight": "5KG",
+            "Price": "120",
+            "Currency": "EUR",
+            "Properties": [
+                {
+                    "Id": "1",
+                    "Text": "Property 1"
+                },
+                {
+                    "Id": "2",
+                    "Text": "Property 2"
+                },
+                {
+                    "Id": "3",
+                    "Text": "Property 3"
+                },
+                {
+                    "Id": "4",
+                    "Text": "Property 4"
+                },
+                {
+                    "Id": "5",
+                    "Text": "Property 5"
+                }
+            ]
+        }
+    ],
+    "News": [
+        {
+            "Title": "Los billetes del ´AVE barato´ de Madrid ",
+            "Description": "El servicio contara en su estreno con dos frecuencias en cada sentido",
+            "Unread": true,
+            "Author": "El Pais",
+            "Priority": "Medium",
+            "ShowCloseButton": false
+        },
+        {
+            "Title": "La Casa De Los Famosos Mexico",
+            "Description": "El servicio contara en su estreno con dos frecuencias en cada sentido",
+            "Unread": true,
+            "Author": "Telerisa",
+            "Priority": "High",
+            "ShowCloseButton": false
+        },
+        {
+            "Title": "La Casa De Papel",
+            "Description": "El servicio contara en su estreno con dos frecuencias en cada sentido",
+            "Unread": false,
+            "Author": "Netflix",
+            "Priority": "Low",
+            "ShowCloseButton": true
+        }
+    ]
+}
