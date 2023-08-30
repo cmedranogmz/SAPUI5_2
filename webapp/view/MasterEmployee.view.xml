@@ -1,10 +1,10 @@
-<mvc:View controllerName="employees.controller.MainView"
+<mvc:View controllerName="employees.controller.MasterEmployee"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
         <content>
-            <HBox id="hBoxEmployee" >
+            <HBox id="hBoxEmployee" wrap="Wrap">
                 <Label id="labelEmployee" labelFor="inputEmployee" text="{i18n>lableEmployee}" class="sapUiSmallMargin"/>
                 <Input id="inputEmployee" value="{jsonCountries>/EmployeeId}" maxLength="10" width="200px" class="sapUiSmallMarginEnd"/>
                 <Label id="labelCountry" labelFor="slCountry" text="{i18n>labelCountry}" class="sapUiSmallMargin" />

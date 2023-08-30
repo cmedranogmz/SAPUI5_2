@@ -16,7 +16,7 @@
       "toolsId": "ac8ad797-0a0c-4801-bee2-0835ae34c420"
     },
     "dataSources": {
-      "mainService": {
+      "Northwind.svc": {
         "uri": "/V2/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
@@ -69,10 +69,15 @@
           "bundleName": "employees.i18n.i18n"
         }
       }, 
-      "": {
-        "dataSource": "mainService",
+      "odataNorthwind": {
+        "dataSource": "Northwind.svc",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request",
+          "refreshAfterChange": false
+        }
       }
     },
     "resources": {
@@ -97,22 +102,29 @@
           "name": "RouteMainView",
           "pattern": ":?query:",
           "target": [
-            "TargetMainView"
+            "TargetMain"
           ]
         }
       ],
       "targets": {
-        "TargetMainView": {
+        "TargetMain": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "MainView",
-          "viewName": "MainView"
+          "viewId": "Main",
+          "viewName": "Main"
+        },
+        "TargetMasterEmployee": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "MasterEmployee",
+          "viewName": "MasterEmployee"
         }
       }
     },
     "rootView": {
-      "viewName": "employees.view.App",
+      "viewName": "employees.view.Main",
       "type": "XML",
       "async": true,
       "id": "App"
