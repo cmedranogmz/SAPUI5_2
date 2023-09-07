@@ -1,6 +1,6 @@
 // @ts-nocheck
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "employees/controller/Base.controller",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator"
 ],
@@ -9,7 +9,7 @@ sap.ui.define([
      * @param {typeof sap.iu.model.Filter} Filter 
      * @param {typeof sap.iu.model.FilterOperator} FilterOperator 
      */
-    function (Controller, Filter, FilterOperator) {
+    function (Base, Filter, FilterOperator) {
         "use strict";
 
         function myCheck() {
@@ -23,7 +23,7 @@ sap.ui.define([
             }
         }
 
-        return Controller.extend("employees.controller.MasterEmployee", {
+        return Base.extend("employees.controller.MasterEmployee", {
             onInit: function () {
                 this._bus = sap.ui.getCore().getEventBus();
             },
@@ -75,7 +75,7 @@ sap.ui.define([
 
             showPostalCode: function (oEvent) {
                 var itemPressed = oEvent.getSource();
-                var oContext = itemPressed.getBindingContext("jsonEmployees");
+                var oContext = itemPressed.getBindingContext("odataNorthwind");
                 var objectContext = oContext.getObject();
                 sap.m.MessageToast.show(objectContext.PostalCode);
 
@@ -101,7 +101,7 @@ sap.ui.define([
                 ordersTable.destroyItems();
 
                 var itemPressed = oEvent.getSource();
-                var oContext = itemPressed.getBindingContext("jsonEmployees");
+                var oContext = itemPressed.getBindingContext("odataNorthwind");
                 var objectContext = oContext.getObject();
                 var orders = objectContext.Orders;
 
@@ -155,25 +155,25 @@ sap.ui.define([
                 var columListItem = new sap.m.ColumnListItem();
 
                 var cellOrderID = new sap.m.Label();
-                cellOrderID.bindProperty("text", "jsonEmployees>OrderID");
+                cellOrderID.bindProperty("text", "odataNorthwind>OrderID");
                 columListItem.addCell(cellOrderID);
 
                 var cellFreight = new sap.m.Label();
-                cellFreight.bindProperty("text", "jsonEmployees>Freight");
+                cellFreight.bindProperty("text", "odataNorthwind>Freight");
                 columListItem.addCell(cellFreight);
 
                 var cellShipAddress = new sap.m.Label();
-                cellShipAddress.bindProperty("text", "jsonEmployees>ShipAddress");
+                cellShipAddress.bindProperty("text", "odataNorthwind>ShipAddress");
                 columListItem.addCell(cellShipAddress);
 
                 var oBindingInfo = {
-                    model: "jsonEmployees",
+                    model: "odataNorthwind",
                     path: "Orders",
                     template: columListItem
                 };
 
                 newTableJSON.bindAggregation("items", oBindingInfo);
-                newTableJSON.bindElement("jsonEmployees>" + oContext.getPath());
+                newTableJSON.bindElement("odataNorthwind>" + oContext.getPath());
 
                 ordersTable.addItem(newTableJSON);
 
@@ -184,14 +184,14 @@ sap.ui.define([
                 var iconPressed = oEvent.getSource();
 
                 //context from the model
-                var oContext = iconPressed.getBindingContext("jsonEmployees");
+                var oContext = iconPressed.getBindingContext("odataNorthwind");
 
                 if (!this._oDialogOrders) {
                     this._oDialogOrders = sap.ui.xmlfragment("employees.fragment.DialogOrders", this);
                     this.getView().addDependent(this._oDialogOrders);
                 };
 
-                this._oDialogOrders.bindElement("jsonEmployees>" + oContext.getPath());
+                this._oDialogOrders.bindElement("odataNorthwind>" + oContext.getPath());
                 this._oDialogOrders.open();
             },
 
@@ -200,7 +200,7 @@ sap.ui.define([
             },
 
             showEmployee: function (oEvent) {
-                var path =oEvent.getSource().getBindingContext("jsonEmployees").getPath();
+                var path = oEvent.getSource().getBindingContext("odataNorthwind").getPath();
                 this._bus.publish("flexible", "showEmployee", path);
             }
 

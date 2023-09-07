@@ -13,7 +13,8 @@ sap.ui.define([
                 oJSONModelEmployees.loadData("/localService/mockdata/Employees.json", false);
                 oJSONModelEmployees.attachRequestCompleted(function (oEventModel) {
                     console.log.apply(JSON.stringify(oJSONModelEmployees.getData()));
-                });
+                }); 
+
                 oView.setModel(oJSONModelEmployees, "jsonEmployees");
 
                 var oJSONModelCountries = new sap.ui.model.json.JSONModel();
@@ -41,7 +42,7 @@ sap.ui.define([
 
         showEmployeeDetails: function(category, nameEvent, path){
             var detailView = this.getView().byId("detailsEmployeeView");
-            detailView.bindElement("jsonEmployees>" + path);
+            detailView.bindElement("odataNorthwind>" + path);
             this.getView().getModel("jsonLayout").setProperty("/ActiveKey", "TwoColumnsBeginExpanded");
 
             var incidenceModel = new sap.ui.model.json.JSONModel([]);

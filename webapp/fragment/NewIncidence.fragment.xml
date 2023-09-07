@@ -13,12 +13,12 @@
         <content>
             <HBox>
                 <VBox class="sapUiSmallMarginEnd">
-                    <Text text="{i18n>incidenceDate}"/>
-                    <DatePicker dateValue="{incidenceModel>date}"/>
+                    <Label text="{i18n>incidenceDate}" required="true"/>
+                    <DatePicker dateValue="{incidenceModel>date}" valueState="{incidenceModel>CreationDateState}"/>
                 </VBox>
                 <VBox visible="{= ${incidenceModel>date} !== '' &amp;&amp; ${incidenceModel>date} !== undefined }" class="sapUiSmallMarginEnd">
-                    <Text text="{i18n>incidenceReason}"/>
-                    <Input ></Input>
+                    <Label text="{i18n>incidenceReason}" required="true"/>
+                    <Input value="{incidenceModel>Reason}" valueState="{incidenceModel>ReasonState}"></Input>
                 </VBox>
                 <VBox visible="{= ${incidenceModel>date} !== '' &amp;&amp; ${incidenceModel>date} !== undefined }" class="sapUiSmallMarginEnd">
                     <Text text="{i18n>incidenceType}"/>
