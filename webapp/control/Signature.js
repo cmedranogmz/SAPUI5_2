@@ -46,13 +46,30 @@ sap.ui.define(
                 var canvas = document.querySelector("canvas");
                 try {
                     this.signaturePad = new SignaturePad(canvas);
-                } catch (error) {
-                    console.error(error);
+                    this.signaturePad.fill = false;
+                    canvas.addEventListener("mousedown", function () {
+                        this.signaturePad.fill = true;    
+                    }.bind(this));
+                } catch (e) {
+                    console.error(e);
                 }
             },
 
             clear: function () {
                 this.signaturePad.clear();
+                this.signaturePad.fill = false;
+            },
+
+            isFill: function () {
+                return this.signaturePad.fill;
+            },
+
+            getSignature: function () {
+                return this.signaturePad.toDataURL();
+            },
+
+            setSignature: function (signature) {
+                this.signaturePad.fromDataURL(signature);
             }
 
         });
