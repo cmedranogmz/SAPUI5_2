@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "Northwind.svc": {
-        "uri": "/V2/Northwind/Northwind.svc/",
+        "uri": "V2/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -26,13 +26,17 @@
         }
       },
       "YSAPUI5_SRV_01": {
-        "uri": "/sap/opu/odata/sap/YSAPUI5_SRV_01/",
+        "uri": "sap/opu/odata/sap/YSAPUI5_SRV_01/",
         "type": "OData",
         "settings": {
           "annotations": [],
           "localUri": "localService/YSAPUI5_SRV_01/metadata.xml",
           "odataVersion": "2.0"
         }
+      },
+      "jsonLayout": {
+        "uri": "model/json/Layout.json",
+        "type": "JSON"
       }
     }
   },
